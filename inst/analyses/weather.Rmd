@@ -12,6 +12,7 @@ library(tidyverse)
 ```{r}
 weather %>%
   as_tibble() %>%
+  subsetPrecip(.) %>% 
   ggplot(aes(wind_gust, wind_speed)) +
     geom_point()
 ```

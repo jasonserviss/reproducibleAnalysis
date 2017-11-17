@@ -7,9 +7,8 @@
 #' @name plotFigure
 #' @rdname plotFigure
 #' @aliases plotFigure
-#' @param figure Character;
+#' @param figure Character; The figure to plot.
 #' @param ... additional arguments to pass on.
-#' @return spCounts object.
 #' @author Jason T. Serviss
 #' @examples
 #'
