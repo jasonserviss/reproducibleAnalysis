@@ -1,0 +1,17 @@
+---
+title: "weather"
+output: html_document
+---
+
+```{r}
+library(reproducibleAnalysis)
+library(tidyverse)
+```
+
+
+```{r}
+weather %>%
+  as_tibble() %>%
+  ggplot(aes(wind_gust, wind_speed)) +
+    geom_point()
+```

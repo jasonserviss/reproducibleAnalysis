@@ -1,0 +1,7 @@
+load("/Users/jasonserviss/Github/reproducibleAnalysis/data/airlines.rda")
+ls()
+load("/Users/jasonserviss/Desktop/nycflights13-master/data/weather.rda")
+ls()
+weather
+load("/Users/jasonserviss/Github/reproducibleAnalysis/data/weather.rda")
+ls()

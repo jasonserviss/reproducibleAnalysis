@@ -1,0 +1,8 @@
+maintainer: "Jason Serviss"
+email: "jason.serviss@ki.se"
+from: "rocker/tidyverse:3.4.2"
+pandoc: false
+cran:
+  - liftr/0.7
+remotes:
+  - "jasonserviss/reproducibleAnalysis"
