@@ -1,5 +1,26 @@
+#' plotFigure
+#'
+#' Recreates any figure from scratch.
+#'
+#' Include description.
+#'
+#' @name plotFigure
+#' @rdname plotFigure
+#' @aliases plotFigure
+#' @param figure Character;
+#' @param ... additional arguments to pass on.
+#' @return spCounts object.
+#' @author Jason T. Serviss
+#' @examples
+#'
+#' \dontrun{plotFigure("figure1a")}
+#'
+NULL
 
-#`@export
+#' @rdname plotFigure
+#' @export
+#' @importFrom liftr lift render_docker
+
 plotFigure <- function(figure, ...) {
   path <- getPath(figure)
   runDockerAndView(path)
@@ -13,7 +34,7 @@ getPath <- function(figure) {
 #returns a map of paths to each figures .rmd file
 #for more analysis add their path to the list.
 makeMap <- function() {
-  list(figure1 = "analysis/weather.Rmd")
+  list(figure1 = "analyses/weather.Rmd")
 }
 
 #runs liftr render_docker and opens the html output
@@ -24,11 +45,9 @@ runDockerAndView <- function(path) {
   tmpPath <- moveToTmp(rmdPath)
   
   render_docker(file.path(tmpPath, basename(rmdPath)), cache = FALSE)
-  print(tmpPath)
   
   htmlPath <- file.path(tmpPath, paste0(sans_ext(basename(rmdPath)), '.html'))
   browseURL(paste0('file://', htmlPath))
-  #unlink(tmpPath, recursive = TRUE)
 }
 
 #runs lift and copies the .rmd file and Dockerfile to a tmp directory (due to
